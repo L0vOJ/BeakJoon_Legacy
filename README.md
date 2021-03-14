@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "#https://www.acmicpc.net/step"
 "#들어가라"
 C:\Users\정재원\AppData\Local\atom\app-1.52.0\resources\app.asar.unpacked\node_modules\dugite\git\mingw64\bin
@@ -18,6 +17,3 @@ block maze;
 조건 연산자 max_val = (x>y)?x:y
 ?x -> 앞 x>y가 맞다면 max_val은 x의 값을 가진다
 :y -> 앞 x>y가 틀리다면 max_val은 y의 값을 가진다
-=======
-# BeakJoon
->>>>>>> cbf3313a18cf4ffb0ee0dcaa2aa783b73f6265ad
