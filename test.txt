@@ -1,1 +1,6 @@
 #hello?
+유클리드 호제법 - 최대공약수를 가장 빠르게 구할 방법중 하나
+int gcd(int a, int b)
+{
+	return b ? gcd(b, a%b) : a;
+}
