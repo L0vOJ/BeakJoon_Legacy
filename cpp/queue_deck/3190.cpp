@@ -5,8 +5,7 @@ int main(){
   int move[101][2];
   int n,k,h;
   int a1,a2;
-  int ip_num;
-  char ip_ch;
+  int ip_num;char ip_ch;
   int sense=0,step=0,yummy=1;
   cin>>n>>k;
   for(int a=0;a<k;a++){
@@ -24,8 +23,7 @@ int main(){
       move[a][1]=-1;
     }
   }
-  a1=1;
-  a2=1;
+  a1=1;a2=1;
   for(int t=0;;t++){
     //cout<<a1<<","<<a2<<","<<move[step][0]<<","<<move[step][1]<<","<<sense<<endl;
     if(!a1||!a2||a1==n+1||a2==n+1||feild[a1][a2]>0){     //경계에 닿거나 신체에 닿으면
@@ -41,12 +39,10 @@ int main(){
         }
       }
     }
-    else{
-      yummy++;
-    }
+    else yummy++;
     if(move[step][0]==t){      //방향 바꿀 시간 판별
       sense+=move[step++][1];
-      if(sense<0){             //0에서 -1로 내려갈 때 %= 연산이 +로 안잡아준다 ********** 이렇게 중요한 사실을 이제야
+      if(sense<0){             //값이 음수로 내려갈 때 %= 연산이 알아서 +로 안잡아준다 ***** 반드시 기억하자 *****
         sense+=4;
       }
       sense%=4;
