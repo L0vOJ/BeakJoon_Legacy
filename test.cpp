@@ -2,12 +2,11 @@
 #include<string>
 using namespace std;
 int main(){
-  int* arr;
-  arr = (int*)malloc(100*sizeof(int));
-  for(int a=0;a<10;a++){
-    arr[a]=1;
+  int a=-1; //-1은 a에 걸린다 !a에 걸리는 건 무조건 0
+  if(a){
+    cout<<"a"<<endl;
   }
-  for(int a=0;a<arr.size();a++){
-    cout<<arr[a]<<endl;
+  if(!a){
+    cout<<"!a";
   }
 }
