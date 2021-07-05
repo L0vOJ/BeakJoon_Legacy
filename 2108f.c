@@ -1,5 +1,5 @@
 #include<stdio.h>
-//O(n^2)로 인한 시간초과 ㅎㅎ 凸凸
+//O(n^2)로 인한 시간초과
 //-4000부터 4000까지 구간 나눠서 stack하는 방식으로 다시 짜야 함 근데 안할거임
 void sort(int* arr,int in);
 int first(int* arr,int in);
