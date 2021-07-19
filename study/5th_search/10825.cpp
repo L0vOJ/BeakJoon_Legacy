@@ -4,33 +4,35 @@
 using namespace std;
 struct status{
   string name;
-  int score[3];
-};
+  int a,b,c;
+}student[100001];
 
-bool standard(status a,status b){
-  if(a.score[0] != b.score[0]){
-    return a.score[0] > b.score[0];
+bool standard(status s1, status s2){
+  if(s1.a != s2.a){
+    return s1.a > s2.a;
   }
-  else if(a.score[1] != b.score[1]){
-    return a.score[1] < b.score[1];
+  else if(s1.b != s2.b){
+    return s1.b < s2.b;
   }
-  else if(a.score[2] != b.score[2]){
-    return a.score[2] > b.score[2];
+  else if(s1.c != s2.c){
+    return s1.c > s2.c;
   }
   else
-    return strcmp(a.name,b.name);
-}
+    return s1.name < s2.name;
+};
 
 
 int main(){
   int n;
   cin>>n;
-  struct status student = new status[n];
   for(int z=0;z<n;z++){
-    scanf("%s %d %d %d",&student[z].name,&student[z].score[0],&student[z].score[1],&student[z].score[2]);
+    //cin>>student[z].name>>student[z].a>>student[z].b>>student[z].c;
+    cin>>student[z].name;
+    scanf("%d %d %d",&student[z].a,&student[z].b,&student[z].c);
   }
+  //printf("hello\n");
   sort(student,student+n,standard);
   for(int z=0;z<n;z++){
-    printf("%s\n", student[z].name);
+    cout<<student[z].name<<"\n";
   }
 }
