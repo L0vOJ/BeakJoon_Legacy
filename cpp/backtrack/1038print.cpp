@@ -3,7 +3,7 @@
 #include <fstream>      //File I/O header file
 
 using namespace std;
-ofstream fout("answer.txt"); 
+ofstream fout("1038_answer.txt"); 
 int checkout(long long test);
 int main(){
 	int stack=0;
