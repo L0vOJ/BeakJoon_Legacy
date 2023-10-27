@@ -4,7 +4,7 @@
 #include<time.h>
 #include<math.h>
 #include<stddef.h>  //sizeof 연산자 내장
-#include<windows.h>
+//#include<windows.h>
 
 #define len 53  //무조건 홀수여야만 한다  4의배수 +1의 값만 가능하다
 
@@ -176,15 +176,15 @@ void root_pruning(block**maze){
 }
 
 int root_plus(int a,int b,block**maze){
-  int direction,try,surround=0;
+  int direction,trial,surround=0;
   direction=(rand()%4);                    //printf("%d",direction);
   for(int z=0;z<4;z++){
-    try=connection(a,b,1,direction,maze);
-    if(try==-1){
+    trial=connection(a,b,1,direction,maze);
+    if(trial==-1){
       return 0;
     }
     else{
-      surround+=try;
+      surround+=trial;
     }
     direction = turn(direction);
   }
@@ -259,7 +259,7 @@ void void_pruning(block**maze){
 
 
 int void_plus(int a,int b,block**maze){   //me.path==1, 상태한테 값주고 그놈 주변 통로 값 재조정
-  int direction,try,surround=0;
+  int direction,trial,surround=0;
   direction=(rand()%4);                    //printf("%d",direction);
   for(int z=0;z<4;z++){
     direction = turn(direction);
@@ -279,12 +279,12 @@ int void_plus(int a,int b,block**maze){   //me.path==1, 상태한테 값주고 그놈 주�
       surround++;
       continue;
     }
-    try=connection(a,b,0,direction,maze);
-    if(try==-1){
+    trial=connection(a,b,0,direction,maze);
+    if(trial==-1){
       return 0;
     }
     else{
-      surround+=try;
+      surround+=trial;
     }
   }  //printf("\n");
   if(surround==4){        //미로 크기가 엄청 클때는 효과를 줄 수도 있겠지만 크키 200 이내에서는 거의 쓰이지 않는 것 같다.
